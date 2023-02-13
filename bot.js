@@ -8,19 +8,20 @@ dotenv.config()
 const bot = new Telegraf(process.env.TOKEN);
 
 bot.start((ctx) => {
-    console.log("started");
-    fs.readFile(path.resolve('D:/123.avi'),function(err,data){
-        if(!err){
-            console.log("sending",data);
-            ctx.telegram.sendVideo(ctx.chat.id,{
-                source : data,
-                filename:'123.avi'
-            })
-        }
-        else{
-            console.log("errr");
-        }
-    })
+    ctx.telegram.sendMessage(ctx.chat.id,"Welcome")
+//     console.log("started");
+//     fs.readFile(path.resolve('D:/123.avi'),function(err,data){
+//         if(!err){
+//             console.log("sending",data);
+//             ctx.telegram.sendVideo(ctx.chat.id,{
+//                 source : data,
+//                 filename:'123.avi'
+//             })
+//         }
+//         else{
+//             console.log("errr");
+//         }
+//     })
   
 })
 
